@@ -1169,7 +1169,7 @@ subset_giotto_points_object = function(gpoints,
       if(verbose) print('cropping spatial extent')
 
       myspatvector = gpoints@spatVector
-      my_ext = ext(c(x_min, x_max, y_min, y_max)) #TODO: replace with spatExtent instead of x,y min/max values
+      my_ext = ext(x_min, x_max, y_min, y_max) #TODO: replace with spatExtent instead of x,y min/max values
       myspatvector_subset = terra::crop(myspatvector, my_ext)
 
       if (terra::nrow(myspatvector_subset) == 0) {
